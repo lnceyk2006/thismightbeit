@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4ff;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px;
+            font-size: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .back-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Gallery</h1>
+
+    <!-- Grid of Images -->
+    <div class="gallery">
+        <!-- Images with onclick event to open lightbox -->
+        <a href="#lightbox1"><img src="images/project1.jpg" alt="Project 1"></a>
+        <a href="#lightbox2"><img src="images/project2.jpg" alt="Project 2"></a>
+        <a href="#lightbox3"><img src="images/project3.jpg" alt="Project 3"></a>
+        <a href="#lightbox4"><img src="images/project4.jpg" alt="Project 4"></a>
+        <a href="#lightbox5"><img src="images/project5.jpg" alt="Project 5"></a>
+        <a href="#lightbox6"><img src="images/project6.jpg" alt="Project 6"></a>
+        <a href="#lightbox7"><img src="images/project7.jpg" alt="Project 7"></a>
+        <a href="#lightbox8"><img src="images/project8.jpg" alt="Project 8"></a>
+        <a href="#lightbox9"><img src="images/project9.jpg" alt="Project 9"></a>
+    </div>
+
+    <!-- Lightboxes for each image -->
+    <div id="lightbox1" class="lightbox">
+        <img src="images/project1.jpg" alt="Project 1">
+    </div>
+    <div id="lightbox2" class="lightbox">
+        <img src="images/project2.jpg" alt="Project 2">
+    </div>
+    <div id="lightbox3" class="lightbox">
+        <img src="images/project3.jpg" alt="Project 3">
+    </div>
+    <div id="lightbox4" class="lightbox">
+        <img src="images/project4.jpg" alt="Project 4">
+    </div>
+    <div id="lightbox5" class="lightbox">
+        <img src="images/project5.jpg" alt="Project 5">
+    </div>
+    <div id="lightbox6" class="lightbox">
+        <img src="images/project6.jpg" alt="Project 6">
+    </div>
+    <div id="lightbox7" class="lightbox">
+        <img src="images/project7.jpg" alt="Project 7">
+    </div>
+    <div id="lightbox8" class="lightbox">
+        <img src="images/project8.jpg" alt="Project 8">
+    </div>
+    <div id="lightbox9" class="lightbox">
+        <img src="images/project9.jpg" alt="Project 9">
+    </div>
+
+    <!-- Button to go back to the welcome page -->
+    <a href="mil.html" class="back-button">Back to Welcome Page</a>
+
+</body>
+</html>
